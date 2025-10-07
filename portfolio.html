@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Designs | Graphic Design Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #45a049;
+            --black: #000000;
+            --white: #ffffff;
+            --gray-light: #f5f5f5;
+            --gray: #e0e0e0;
+            --gray-dark: #333333;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo a {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--black);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Animated Background Shapes */
+        .background-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .shape {
+            position: absolute;
+            background: var(--primary-color);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 3s;
+        }
+
+        .shape:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            top: 70%;
+            left: 60%;
+            animation-delay: 4s;
+        }
+
+        .shape.triangle {
+            width: 0;
+            height: 0;
+            background: transparent;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 70px solid var(--primary-color);
+            border-radius: 0;
+            animation: rotate 8s linear infinite;
+        }
+
+        .shape.triangle:nth-child(6) {
+            top: 40%;
+            left: 15%;
+        }
+
+        .shape.square {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            background: var(--primary-color);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .shape.square:nth-child(7) {
+            top: 50%;
+            left: 85%;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Home Section */
+        .home-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .home-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .home-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .home-subtitle {
+            font-size: 1.5rem;
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .home-description {
+            font-size: 1.1rem;
+            color: var(--gray-dark);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Slideshow Section */
+        .slideshow-section {
+            padding: 4rem 0;
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .slideshow-slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: fade 1.5s ease-in-out;
+        }
+
+        .slideshow-slide.active {
+            display: block;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--white);
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .slide-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .slide-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .slide-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .slide-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .slideshow-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: var(--gray);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active, .dot:hover {
+            background-color: var(--primary-color);
+        }
+
+        @keyframes fade {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-dark);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 5rem 0;
+            background-color: var(--gray-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--white);
+            padding: 2rem 1rem 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info i {
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .whatsapp { background-color: #ffffff; }
+        .facebook { background-color: #ffffff; }
+        .instagram { background-color: #ffffff; }
+        .linkedin { background-color: #ffffff; }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: 2px solid var(--gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .home-title {
+                font-size: 2.5rem;
+            }
+
+            .home-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .slideshow-container {
+                height: 300px;
+            }
+
+            .slide-content h3 {
+                font-size: 1.4rem;
+            }
+
+            .slide-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .slideshow-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">TheCreator</a>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <!-- Animated Background Shapes -->
+        <div class="background-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape triangle"></div>
+            <div class="shape square"></div>
+        </div>
+        
+        <div class="home-container">
+            <div class="home-content">
+                <h1 class="home-title">The Creator</h1>
+                <p class="home-subtitle">Transforming Ideas into Visual Masterpieces</p>
+                <p class="home-description">
+                    Welcome to The Creator, where we blend creativity with strategy to deliver 
+                    exceptional graphic design solutions. From branding to digital assets, we bring 
+                    your vision to life with precision and passion.
+                </p>
+                <a href="#gallery" class="cta-button">View Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slideshow Section -->
+    <section class="slideshow-section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">Latest Offers & Updates</h2>
+            <p class="section-subtitle" style="color: var(--gray);">Check out our latest promotions and new services</p>
+            
+            <div class="slideshow-container">
+                <!-- Slide 1 -->
+                <div class="slideshow-slide active">
+                    <img src="https://picsum.photos/1000/400?random=10" alt="Special Offer" style="width:100%; height:100%; object-fit:cover;">
+                    <div class="slide-content">
+                        <h3>Summer Design Special</h3>
+                        <p>Get 30% off on all branding packages this season. Limited time offer!</p>
+                        <a href="#contact" class="slide-button">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slideshow-slide">
+                    <img src="https://picsum.photos/1000/400?random=11" alt="New Service" style="width:100%; height:100%; object-fit:cover;">
+                    <div class="slide-content">
+                        <h3>Web Design Services</h3>
+                        <p>Now offering complete website design and development packages.</p>
+                        <a href="#contact" class="slide-button">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slideshow-slide">
+                    <img src="https://picsum.photos/1000/400?random=12" alt="Portfolio Update" style="width:100%; height:100%; object-fit:cover;">
+                    <div class="slide-content">
+                        <h3>New Portfolio Pieces</h3>
+                        <p>Check out our latest work for major clients in the tech industry.</p>
+                        <a href="#gallery" class="slide-button">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slideshow-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Our Portfolio</h2>
+            <p class="section-subtitle">A showcase of our latest creative projects</p>
+            
+            <div class="gallery-grid">
+                <!-- Gallery items - you can replace these images -->
+                <div class="gallery-item">
+                    <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/506469865_122111888480890717_5129136452891075485_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFLhXztVMqVvIukTrXqtAIYnGpPrIumT7ecak-si6ZPt4B1u5ZevAJxYE8SF0HRohnGW-c67QxK0l3wSRWK-2dV&_nc_ohc=UGTvfgBG0TAQ7kNvwEwo04Z&_nc_oc=Adms5jRsxwiCx-RBnSMAMFFFjh7Y5R5oMV0462W_CmQus4xjzoJzeCy0ZRuH0O1IxfU&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=Tq8kf6Mb2siD43J8ac0czQ&oh=00_Affy_uRywwsY20DscKaA5cXdkPvAtDcgb4jsj4RFBERmhA&oe=68EA5320" alt="Social Media Post">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/506482054_122111888342890717_6261158555773680119_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEcoxoAVvPVVYz_Q3YAwLBY_m6NkXTrVsH-bo2RdOtWwYGWtybHDXsb5ktSnfYh-Vz9Pr-_hv-UfLu6JwnPdXYt&_nc_ohc=OU3nCRQlPckQ7kNvwElP2Bo&_nc_oc=Adm5PdQU6oUmLMDOGJii_6S0W0teA_X3C21HEYAEX5zI8UpBuCClxVuJev6QPu_AVx4&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=pyti1jIZ5ZZ30jBgP6RVzg&oh=00_Affz3M1K8gemMXUZYgeFc2uMgCQo6q-gx5bwg9kTGnT_Tw&oe=68EA69EE" alt="Design Project 2">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/509441677_122115419162890717_3260416730239232823_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGgspXXQsepajp5O6cHk5w5DLtvrLY6MAAMu2-stjowAKVaO_GpCsvET-ICt97ra_v5ONO8w0-OtzalZbKePQ_A&_nc_ohc=hnSUwCrAQXMQ7kNvwEn3rw1&_nc_oc=AdkcIvm4xDbpvt-5nDV9h9RTq9sjqGRDdptWPyJ39ZZdthuqzr2sekLLNZDinm5He-A&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=_lPjryg2S3jWu5T6v7N49w&oh=00_Afc63Q-vx7Jje-d0HJ91Q2Afcvm6MQkCZ4e9vhWh7nlMcg&oe=68EA4F5B" alt="Design Project 3">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/518296822_122118982184890717_6160273098228368579_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGK8quqvnJTM18bjcntipdAKGkEMC7yegooaQQwLvJ6CqmYeF8FyfKvRBA46dLBIT-ylfeC1aN63lnIadZWUFIW&_nc_ohc=vJA-cMW_hBgQ7kNvwEPjDUy&_nc_oc=Adkzoxk0TeNh-W6xGk2K0ZSWhAl1J0zuXdkAldio0drF_AHBc-xvHm80NlN1c216Z_M&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=-hOMJKVjgY0NgzUvf2r51g&oh=00_AfcCgT_mOtfNief48i1kZPCbIp3hsu7KmY9dmBydxPhwyw&oe=68EA6C72" alt="Design Project 4">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/535958309_122129092940890717_5639165042480491080_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGQ8RynEYWUVTCIQ4W_6bNCTdlDWirkWV5N2UNaKuRZXmkO_sG0tTzSXNingWN024CqKXx2DNt7Ksv0REHwSPb5&_nc_ohc=TWQj0x2ANwAQ7kNvwE9XtEy&_nc_oc=AdnMtTPPApeQs9lAFhek5u_QHc5Ej9y6L_I7ogoxzzFzoLMnp8D5v21MNCJM9YyW5z8&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=1DWzuQ9D6rgFxae6owL9ww&oh=00_AfdV5b4Y_Ypm_HDDLK-L8WYxqrfSsP9L539Ga1AOEu9L0A&oe=68EA6522" alt="Design Project 5">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/300?random=6" alt="Design Project 6">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+                 <div class="gallery-item">
+                    <img src="" alt="Design Project 5">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+                 <div class="gallery-item">
+                    <img src="" alt="Design Project 5">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+                 <div class="gallery-item">
+                    <img src="" alt="Design Project 5">
+                    <div class="gallery-overlay">
+                        <h3>Social Media Post</h3>
+                        <p>Hight Resolution png</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's create something amazing together</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> rathnayakaisuru422@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +94 762216806</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Colombo,Sri Lanka</p>
+                    
+                    <div class="social-links">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons">
+                            <a href="https://wa.me/15551234567" target="_blank" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="social-icon linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 The Creator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            name: this.querySelector('input[type="text"]').value,
+            email: this.querySelector('input[type="email"]').value,
+            message: this.querySelector('textarea').value
+        };
+        
+        // Replace with your Google Apps Script URL
+        fetch('https://formspree.io/f/myznprzn', {
+            method: 'POST',
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        })
+        .catch(error => {
+            alert('Failed to send message. Please try again or contact us directly.');
+        });
+    });
+}
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.backgroundColor = 'var(--white)';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Current year for footer
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearElement = document.querySelector('.footer p');
+            if (yearElement) {
+                const currentYear = new Date().getFullYear();
+                yearElement.textContent = `© ${currentYear} Creative Designs. All rights reserved.`;
+            }
+        });
+
+        // Slideshow functionality
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slideshow-slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Auto advance slides
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000);
+
+        // Create additional animated shapes dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const shapesContainer = document.querySelector('.background-shapes');
+            const shapeTypes = ['circle', 'triangle', 'square'];
+            
+            for (let i = 0; i < 5; i++) {
+                const shape = document.createElement('div');
+                const type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+                
+                shape.classList.add('shape', type);
+                
+                // Random position
+                shape.style.left = Math.random() * 100 + '%';
+                shape.style.top = Math.random() * 100 + '%';
+                
+                // Random size for circles and squares
+                if (type !== 'triangle') {
+                    const size = 30 + Math.random() * 70;
+                    shape.style.width = size + 'px';
+                    shape.style.height = size + 'px';
+                }
+                
+                // Random animation delay
+                shape.style.animationDelay = Math.random() * 5 + 's';
+                
+                shapesContainer.appendChild(shape);
+            }
+        });
+    </script>
+</body>
+</html>
